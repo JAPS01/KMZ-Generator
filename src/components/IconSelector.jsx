@@ -5,9 +5,9 @@ import React, { useState } from 'react';
  */
 const ICONS = [
     { id: 'pushpin', name: 'Cableado', url: 'http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png' },
-    { id: 'bird', name: 'Ave', url: 'http://maps.google.com/mapfiles/kml/shapes/campground.png' },
-    { id: 'house', name: 'Casa', url: 'http://maps.google.com/mapfiles/kml/shapes/ranger_station.png' },
-    { id: 'tree', name: 'Árbol', url: 'http://maps.google.com/mapfiles/kml/shapes/parks.png' },
+    { id: 'campground', name: 'Ave', url: 'http://maps.google.com/mapfiles/kml/shapes/campground.png' },
+    { id: 'ranger_station', name: 'Casa', url: 'http://maps.google.com/mapfiles/kml/shapes/ranger_station.png' },
+    { id: 'parks', name: 'Árbol', url: 'http://maps.google.com/mapfiles/kml/shapes/parks.png' },
 ];
 
 export default function IconSelector({ selectedIcon = 'pushpin', onSelect, className = '' }) {

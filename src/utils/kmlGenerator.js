@@ -95,16 +95,10 @@ function groupPlacemarksByIcon(placemarks) {
  */
 function getIconDisplayName(iconType) {
   const nameMap = {
-    'pushpin': 'Pins',
-    'star': 'Estrellas',
-    'flag': 'Banderas',
-    'placemark_circle': 'Círculos',
-    'target': 'Objetivos',
-    'square': 'Cuadrados',
-    'triangle': 'Triángulos',
-    'camera': 'Cámaras',
-    'bird': 'Aves',
-    'tree': 'Árboles',
+    'pushpin': 'Cableado',
+    'campground': 'Ave',
+    'ranger_station': 'Casa',
+    'parks': 'Árbol',
   };
 
   return nameMap[iconType] || 'Otros';
@@ -176,15 +170,9 @@ function generatePlacemarkXML(placemark, index) {
 function getGoogleEarthIconUrl(iconType) {
   const iconMap = {
     'pushpin': 'http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png',
-    'star': 'http://maps.google.com/mapfiles/kml/shapes/star.png',
-    'flag': 'http://maps.google.com/mapfiles/kml/shapes/flag.png',
-    'placemark_circle': 'http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png',
-    'target': 'http://maps.google.com/mapfiles/kml/shapes/target.png',
-    'square': 'http://maps.google.com/mapfiles/kml/shapes/placemark_square.png',
-    'triangle': 'http://maps.google.com/mapfiles/kml/shapes/triangle.png',
-    'camera': 'http://maps.google.com/mapfiles/kml/shapes/camera.png',
-    'bird': 'http://maps.google.com/mapfiles/kml/pal4/icon56.png',
-    'tree': 'http://maps.google.com/mapfiles/kml/pal4/icon50.png',
+    'campground': 'http://maps.google.com/mapfiles/kml/shapes/campground.png',
+    'ranger_station': 'http://maps.google.com/mapfiles/kml/shapes/ranger_station.png',
+    'parks': 'http://maps.google.com/mapfiles/kml/shapes/parks.png',
   };
 
   return iconMap[iconType] || iconMap['pushpin'];
