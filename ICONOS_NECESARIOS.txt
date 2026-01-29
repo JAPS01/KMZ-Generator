@@ -1,0 +1,39 @@
+# Lista de Imágenes SVG/Iconos Necesarios
+
+Este archivo contiene la lista de imágenes e iconos SVG que se necesitan para el proyecto KMZ Generator PWA.
+
+## Iconos de la Aplicación (PWA)
+
+### icon-192.png
+- **Ruta**: `/public/icon-192.png`
+- **Tamaño**: 192x192 píxeles
+- **Descripción**: Icono principal de la aplicación PWA. Debe ser un icono de un mapa con un pin de ubicación GPS. Colores: azul (#0ea5e9) y blanco. Estilo moderno y minimalista.
+- **Uso**: Icono de la app en dispositivos móviles y escritorio
+
+### icon-512.png
+- **Ruta**: `/public/icon-512.png`
+- **Tamaño**: 512x512 píxeles
+- **Descripción**: Versión de alta resolución del icono principal. Mismo diseño que icon-192.png pero en mayor resolución. Icono de mapa con pin GPS, colores azul y blanco.
+- **Uso**: Icono de alta resolución para splash screens y tiendas de aplicaciones
+
+## Favicon
+
+### vite.svg
+- **Ruta**: `/public/vite.svg`
+- **Descripción**: Favicon del sitio web. Puede ser un pin de ubicación GPS simple en azul (#0ea5e9) sobre fondo transparente.
+- **Uso**: Favicon que aparece en la pestaña del navegador
+
+## Iconos Decorativos (Opcional)
+
+### map-background.svg
+- **Ruta**: `/public/map-background.svg`
+- **Descripción**: Patrón de fondo sutil con líneas de mapa topográfico o cuadrícula de coordenadas. Colores muy claros (gris #f1f5f9) para no distraer.
+- **Uso**: Fondo decorativo opcional para la aplicación
+
+## Notas
+
+- Todos los iconos de Google Earth (pushpin, star, flag, etc.) se cargan directamente desde los servidores de Google Maps, por lo que NO necesitan ser creados localmente.
+- Los iconos de Lucide React (Camera, Upload, MapPin, etc.) son componentes de React y no requieren archivos SVG separados.
+- Se recomienda usar herramientas como Figma, Adobe Illustrator, o generadores de iconos online para crear los iconos de la PWA.
+- Los iconos deben tener fondo transparente o blanco según el caso de uso.
+- Mantener un estilo consistente con la paleta de colores de la aplicación (azul #0ea5e9 como color principal).
