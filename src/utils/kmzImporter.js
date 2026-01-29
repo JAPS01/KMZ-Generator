@@ -99,14 +99,9 @@ export async function importKMZ(file) {
  * @returns {string} Tipo de icono
  */
 function detectIconType(url) {
-    if (url.includes('star')) return 'star';
-    if (url.includes('flag')) return 'flag';
-    if (url.includes('circle')) return 'placemark_circle';
-    if (url.includes('target')) return 'target';
-    if (url.includes('square')) return 'square';
-    if (url.includes('triangle')) return 'triangle';
-    if (url.includes('camera')) return 'camera';
-    if (url.includes('icon56')) return 'bird'; // Zoo icon
-    if (url.includes('icon50')) return 'tree'; // Park icon
+    if (url.includes('campground')) return 'campground';
+    if (url.includes('ranger_station')) return 'ranger_station';
+    if (url.includes('parks')) return 'parks';
+    if (url.includes('pushpin')) return 'pushpin';
     return 'pushpin';
 }
