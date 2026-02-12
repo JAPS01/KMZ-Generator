@@ -1,9 +1,10 @@
 import React, { useState, useRef } from 'react';
-import { Map, Upload, FileInput, Merge } from 'lucide-react';
+import { Map, Upload, FileInput, Merge, Layers } from 'lucide-react';
 import PlacemarkForm from './components/PlacemarkForm';
 import PlacemarkList from './components/PlacemarkList';
 import ExportButton from './components/ExportButton';
 import KmzMerger from './components/KmzMerger';
+import BatchUploader from './components/BatchUploader';
 import { importKMZ } from './utils/kmzImporter';
 
 /**
@@ -46,6 +47,11 @@ function App() {
                 setEditingIndex(null);
             }
         }
+    };
+
+    // Agregar múltiples placemarks (batch upload)
+    const handleAddPlacemarks = (newPlacemarks) => {
+        setPlacemarks(prev => [...prev, ...newPlacemarks]);
     };
 
     // Cancelar edición
@@ -97,6 +103,17 @@ function App() {
                             Entrada de datos
                         </button>
                         <button
+                            onClick={() => setActiveTab('batch')}
+                            className={`flex items-center gap-2 px-4 py-2 font-medium transition-colors border-b-2 -mb-px ${
+                                activeTab === 'batch'
+                                    ? 'border-primary-600 text-primary-600'
+                                    : 'border-transparent text-slate-500 hover:text-slate-700'
+                            }`}
+                        >
+                            <Layers className="w-4 h-4" />
+                            Subir por Grupos
+                        </button>
+                        <button
                             onClick={() => setActiveTab('unificar')}
                             className={`flex items-center gap-2 px-4 py-2 font-medium transition-colors border-b-2 -mb-px ${
                                 activeTab === 'unificar'
@@ -113,7 +130,7 @@ function App() {
 
             {/* Main Content */}
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                {activeTab === 'entrada' ? (
+                {activeTab === 'entrada' && (
                     <>
                         {/* Nombre del proyecto */}
                         <div className="mb-6">
@@ -179,7 +196,13 @@ function App() {
                             </div>
                         </div>
                     </>
-                ) : (
+                )}
+
+                {activeTab === 'batch' && (
+                    <BatchUploader onAddPlacemarks={handleAddPlacemarks} />
+                )}
+
+                {activeTab === 'unificar' && (
                     <KmzMerger />
                 )}
             </main>
